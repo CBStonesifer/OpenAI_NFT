@@ -1,5 +1,5 @@
 import { Button } from '@chakra-ui/react';
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import { OpenAIApi } from 'openai';
 
 const O_AI = () => {
