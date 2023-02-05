@@ -1,6 +1,7 @@
 import { Button } from '@chakra-ui/react';
 import React, {useState} from 'react';
 import { OpenAIApi } from 'openai';
+import AI_styles from '../css/O_AI_style'
 
 const O_AI = () => {
 
@@ -33,7 +34,7 @@ const O_AI = () => {
 			<form onSubmit={submitText}>
         	<div>
         		<input type="string" onChange={handleText} value={textInput}/>
-				<button type="submit" style={{margin: 10}}> Generate </button>
+				<button type="submit" className={AI_styles.gen_button}> Generate </button>
         	</div>
         	
       		</form>

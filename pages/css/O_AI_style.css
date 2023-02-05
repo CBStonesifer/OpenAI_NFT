@@ -1,0 +1,15 @@
+.gen_button{
+    box-sizing: border-box;
+
+    width: 280px;
+    height: 138px;
+
+    border: 1px dashed #9747FF;
+    border-radius: 5px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
