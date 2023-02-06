@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    letter-spacing: 4px;
+    word-spacing: 3px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    }

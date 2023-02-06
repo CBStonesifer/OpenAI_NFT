@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react';
 import React, {useState} from 'react';
 import { OpenAIApi } from 'openai';
-import AI_styles from '../css/O_AI_style'
+import AI_styles from '../css/O_AI_style.module.css'
 
 const O_AI = () => {
 

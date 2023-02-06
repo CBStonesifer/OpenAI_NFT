@@ -4,6 +4,7 @@ import { ethers } from 'ethers';
 import WalletCard from './WalletCard';
 import Counter from './Counter';
 import O_AI from './O_AI';
+import Homepage from '../css/Homepage.module.css'
 
 export const App = () => {
   
@@ -13,7 +14,7 @@ export const App = () => {
 
   return (
     <div >
-      <h1>OPEN NFT</h1>
+      <h1 className={Homepage.title}>OPEN NFT</h1>
       <div style={{
             display: 'flex',
             justifyContent: 'center',
