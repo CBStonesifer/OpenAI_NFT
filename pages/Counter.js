@@ -1,11 +1,16 @@
 import React, {useState} from 'react'
 import {ethers} from 'ethers'
 import Mint_abi from'../build/contracts/Mint.json'
+import NFT_abi from '../build/contracts/NFT_contract.json'
+import eth_styles from '../css/eth_style.module.css'
+
 
 const Counter = () => {
 
 	// deploy simple storage contract and paste deployed contract address here. This value is local ganache chain
-	let contractAddress = '0x7ad510EeeE53d75c439F001b8f76d261170C3611';
+	let contractAddress = '0x451DdfC788e85892c605394dC473eDf634182EA5';
+
+	let NFT_contract_Address = '0xEe4a4Cab203000976cce791C04cE5156E16a4573';
 
 	const [errorMessage, setErrorMessage] = useState(null);
 	const [defaultAccount, setDefaultAccount] = useState(null);
@@ -16,6 +21,8 @@ const Counter = () => {
 	const [provider, setProvider] = useState(null);
 	const [signer, setSigner] = useState(null);
 	const [contract, setContract] = useState(null);
+	const [NFTcontract, setNFTContract] = useState(null);
+
 
 	const connectWalletHandler = () => {
 		if (window.ethereum && window.ethereum.isMetaMask) {
@@ -60,17 +67,17 @@ const Counter = () => {
 	const updateEthers = () => {
 		let tempProvider = new ethers.providers.Web3Provider(window.ethereum);
 		setProvider(tempProvider);
-		console.log("provider sent");
-
 
 		let tempSigner = tempProvider.getSigner();
 		setSigner(tempSigner);
-		console.log("signer sent");
-
 
 		let tempContract = new ethers.Contract(contractAddress, Mint_abi['abi'], tempSigner);
 		setContract(tempContract);
 		console.log("contract sent");
+
+		let nftTempContract = new ethers.Contract(NFT_contract_Address, NFT_abi['abi'], tempSigner);
+		setNFTContract(nftTempContract);
+		console.log("NFT contract sent");
 
 	}
 
@@ -86,21 +93,26 @@ const Counter = () => {
 	
 	return (
 		<div>
-		<h4> {"Get/Set Contract interaction"} </h4>
-			<button onClick={connectWalletHandler}>{connButtonText}</button>
+		<h4 className={eth_styles.address_text}> {"Get/Set Contract interaction"} </h4>
+			<button  className={eth_styles.wallet_button} 
+			onClick={connectWalletHandler}>{connButtonText}</button>
 			<div>
-				<h3>Address: {defaultAccount}</h3>
+				<h3 className={eth_styles.address_text} >Address: {defaultAccount}</h3>
 			</div>
-			<button onClick={setIncrement} style={{marginTop: '5em'}}> Increment </button>
-			<div>
-				{currentContractVal}
-			</div>
-			<div>
-			<button onClick={getCurrentVal} style={{marginTop: '5em'}}> My Count </button>
-			</div>
+			
 			{errorMessage}
 		</div>
 	);
 }
 
 export default Counter;
+
+/*
+<button onClick={setIncrement} style={{marginTop: '5em'}}> Increment </button>
+			<div>
+				{currentContractVal}
+			</div>
+			<div>
+			<button onClick={getCurrentVal} style={{marginTop: '5em'}}> My Count </button>
+			</div>
+*/

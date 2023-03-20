@@ -1,0 +1,13 @@
+.wallet_button{
+    background-color: #00d9ff;
+    color: white;
+    border: 0px solid #e6e6e6;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 12px 10px;
+    margin-left: 5px;
+}
+
+.address_text{
+    color: white;
+}

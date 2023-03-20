@@ -1,15 +1,25 @@
 .gen_button{
-    box-sizing: border-box;
-
-    width: 280px;
-    height: 138px;
-
-    border: 1px dashed #9747FF;
-    border-radius: 5px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    background-color: #00d9ff;
+    color: white;
+    border: 0px solid #e6e6e6;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 12px 10px;
+    margin-left: 5px;
 }
+
+.gen_textbox{
+    width: 500px;
+    padding: 14px 10px;
+    border: 2px solid #00d9ff;
+}
+
+.img {
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    object-position: center;
+    border: 2px solid #00d9ff;
+
+  }

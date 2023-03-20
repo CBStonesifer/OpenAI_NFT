@@ -5,6 +5,8 @@ import WalletCard from './WalletCard';
 import Counter from './Counter';
 import O_AI from './O_AI';
 import Homepage from '../css/Homepage.module.css'
+//import {Storm} from "../public/Storm";
+
 
 export const App = () => {
   
@@ -13,7 +15,9 @@ export const App = () => {
   }
 
   return (
-    <div >
+    <div style={{backgroundImage: `url("https://c4.wallpaperflare.com/wallpaper/71/917/240/dark-clouds-storm-thunderstorm-wallpaper-preview.jpg")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover"}}>
       <h1 className={Homepage.title}>OPEN NFT</h1>
       <div style={{
             display: 'flex',
