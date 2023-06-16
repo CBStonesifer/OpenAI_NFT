@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
+.backdrop {
+    background: linear-gradient(to bottom, black, lightgrey);
+    height: 100vh;
+    margin: 0;
+}
+
 .title {
+    position: sticky;
     font-family: 'Orbitron', sans-serif;
     font-size: 60px;
     letter-spacing: 4px;
     word-spacing: 3px;
-    color: #000000;
+    color: lightgrey;
     font-weight: 700;
     text-decoration: none;
     font-style: normal;
@@ -13,5 +20,13 @@
     text-transform: uppercase;
     margin: 10px;
     }
+
+.connect_wallet{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+    
+    
 
 

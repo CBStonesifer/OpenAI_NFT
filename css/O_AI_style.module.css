@@ -1,25 +1,38 @@
+.OI_layout{
+    align-items: center;
+    justify-content: center;
+
+}
+
 .gen_button{
+    position: relative;
+    right: 60px;
     background-color: #00d9ff;
     color: white;
     border: 0px solid #e6e6e6;
     border-radius: 4px;
-    font-size: 20px;
-    padding: 12px 10px;
+    font-size: 27px;
+    padding: 20px 30px;
     margin-left: 5px;
 }
 
 .gen_textbox{
+    position: relative;
+    font-size: 20px;
+    right: 70px;
     width: 500px;
-    padding: 14px 10px;
+    padding: 25px 20px;
     border: 2px solid #00d9ff;
 }
 
 .img {
-    margin-bottom: 10px;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    margin-bottom: 50px;
+    margin-top: 200px;
     width: 100%;
     height: auto;
-    max-width: 400px;
-    object-position: center;
+    max-width: 550px;
     border: 2px solid #00d9ff;
-
   }

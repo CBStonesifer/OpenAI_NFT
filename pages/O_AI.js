@@ -38,11 +38,11 @@ const O_AI = () => {
 	}
 
 	return (
-		<div>
+		<div className={AI_styles.OI_layout}>
 			<img src= {myImage} alt="new"
 				className={AI_styles.img}/>
 			<form onSubmit={generateImage}>
-				<div style={{ display: "flex", alignItems: "center"}}>
+				<div>
 					<input type="string" className={AI_styles.gen_textbox} onChange={handleText} value={textInput}
 					placeholder="Type Image Prompt Here..."/>
 					<button type="submit" className={AI_styles.gen_button}> Generate </button>

@@ -5,7 +5,7 @@ import NFT_abi from '../build/contracts/NFT_contract.json'
 import eth_styles from '../css/eth_style.module.css'
 
 
-const Counter = () => {
+const Wallet = () => {
 
 	// deploy simple storage contract and paste deployed contract address here. This value is local ganache chain
 	let contractAddress = '0x451DdfC788e85892c605394dC473eDf634182EA5';
@@ -14,7 +14,7 @@ const Counter = () => {
 
 	const [errorMessage, setErrorMessage] = useState(null);
 	const [defaultAccount, setDefaultAccount] = useState(null);
-	const [connButtonText, setConnButtonText] = useState('Connect Wallet');
+	const [connButtonText, setConnButtonText] = useState('Connect MetaMask Wallet');
 
 	const [currentContractVal, setCurrentContractVal] = useState(null);
 
@@ -32,7 +32,6 @@ const Counter = () => {
 			.then(result => {
 				console.log("whatup");
 				accountChangedHandler(result[0]);
-				setConnButtonText('Wallet Connected');
 			})
 			.catch(error => {
 				setErrorMessage(error.message);
@@ -48,6 +47,7 @@ const Counter = () => {
 	// update account, will cause component re-render
 	const accountChangedHandler = (newAccount) => {
 		setDefaultAccount(newAccount);
+		setConnButtonText(newAccount);
 		updateEthers();
 	}
 
@@ -93,19 +93,14 @@ const Counter = () => {
 	
 	return (
 		<div>
-		<h4 className={eth_styles.address_text}> {"Get/Set Contract interaction"} </h4>
 			<button  className={eth_styles.wallet_button} 
 			onClick={connectWalletHandler}>{connButtonText}</button>
-			<div>
-				<h3 className={eth_styles.address_text} >Address: {defaultAccount}</h3>
-			</div>
-			
 			{errorMessage}
 		</div>
 	);
 }
 
-export default Counter;
+export default Wallet;
 
 /*
 <button onClick={setIncrement} style={{marginTop: '5em'}}> Increment </button>
