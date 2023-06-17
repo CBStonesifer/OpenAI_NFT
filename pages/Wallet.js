@@ -26,11 +26,9 @@ const Wallet = () => {
 
 	const connectWalletHandler = () => {
 		if (window.ethereum && window.ethereum.isMetaMask) {
-			console.log("hello");
 
 			window.ethereum.request({ method: 'eth_requestAccounts'})
 			.then(result => {
-				console.log("whatup");
 				accountChangedHandler(result[0]);
 			})
 			.catch(error => {
@@ -73,11 +71,9 @@ const Wallet = () => {
 
 		let tempContract = new ethers.Contract(contractAddress, Mint_abi['abi'], tempSigner);
 		setContract(tempContract);
-		console.log("contract sent");
 
 		let nftTempContract = new ethers.Contract(NFT_contract_Address, NFT_abi['abi'], tempSigner);
 		setNFTContract(nftTempContract);
-		console.log("NFT contract sent");
 
 	}
 

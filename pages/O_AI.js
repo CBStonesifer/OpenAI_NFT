@@ -11,7 +11,7 @@ const O_AI = () => {
 	const[myImage, setImage] = useState('https://user-images.githubusercontent.com/47315479/81145216-7fbd8700-8f7e-11ea-9d49-bd5fb4a888f1.png');
 
 	const configuration = new Configuration({
-		apiKey: "",
+		apiKey: "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",
 		});
 	const openai = new OpenAIApi(configuration);
 
